@@ -3,14 +3,10 @@ const dbConfig = require("../config/db.config.js");
 
 // Create a connection to the database
 const connection = new Client({
-  host: dbConfig.HOST,
-  database: dbConfig.DB,
-  password: dbConfig.PASSWORD,
-  user: dbConfig.USER
-  //connectionString: process.env.DATABASE_URL,
-  //ssl: {
-  //  rejectUnauthorized: false
-  //}
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 
